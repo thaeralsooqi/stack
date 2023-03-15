@@ -1,0 +1,38 @@
+#include <iostream>
+#include<stack>
+using namespace std;
+int main()
+{
+	stack<int> stack1, stack2,temp;
+	int x,y;
+	cout << "enter number of elements: ";
+	cin >> x;
+	cout << "enter number in stack1: "<<endl;
+	for (int i = 0; i < x; i++) 
+	{
+		cin >> y;
+		stack1.push(y);
+	}
+	while (!stack1.empty())
+	{
+		if (stack1.top() % 2 == 0)
+			stack2.push(stack1.top());
+		else
+			temp.push(stack1.top());
+		stack1.pop();	
+	}
+	cout << "elements in stack2 : ";
+	while (!stack2.empty()) 
+	{
+		cout << stack2.top()<<" ";
+		stack2.pop();
+	}
+	cout << endl;
+	cout << "elements in stack1 : ";
+	while (!temp.empty()) {
+		cout << temp.top() << " ";
+		temp.pop();
+	}
+	cout << endl;
+	return 0;
+}
